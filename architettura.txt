@@ -1,0 +1,239 @@
+-----Parla del calcolatore e delle sue componenti:
+
+Il calcolatore può essere definito una "macchina universale" che risolve quasi tutti i problemi, esegue delle operazioni semplici scritte da un programmatore che possono diventare programmi complessi. Un calcolatore può eseguire un istruzione alla volta,necessita di energia elettrica ed è composton da circuiti elettrici.
+
+Come componenti del calcolatore abbiamo:
+*La CPU che è la parte centrale del calcolatore diciamo, è un circuito integrativo in grado di risolvere operazioni logiche semplice. Per eseguire le istruzioni ha bisogno di un altro circuito di memorizazzione, ovvero la memoria.
+
+*La memoria centrale è un altro circuito elettronico in grado di memorizzare le operazioni per poi farle eseguire alla CPU.
+
+*Interfaccia I/O serve a fare comunicare il programmatore con la macchina, anch'esso un circuito elettrico e può essere unidirezionali(output o input) oppure bidirezionali(sia di input che di output)
+
+*Bus di sistema sono dei circuiti in grado di far comunicare tra di loro CPU,Memoria ed interfaccia I/O, solitamente è la CPU ha richiedere un informazione o un dato, il bus ha lo scopo di far arrivare quell'informazione ben precisa.
+
+
+
+----Quali sono le fasi per l'esecuzione di un programma?
+
+*prelevamento
+
+*interpretazione(capire cosa chiede l'istruzione)
+
+*esecuzione
+
+
+-----Quali tipi di memoria possiamo avere?
+
+*Memoria volatile= ha bisogno di corrente elettrica e senza di essa non mantiene l'informazione
+
+*Memoria non volatile= mantiene l'informazione anche in assenza di corrente elettrica
+
+
+-------Quali tipi di Memorie Centrali abbiamo?
+
+*RAM=Random Access Memory,è una memoria volatile, sia di scrittura che di lettura e contiene programmi in esecuzione durante l'accensione
+
+*ROM=Read Only Memory, è non volatile, solo di scrittura ed è necessaria per la macchina perchè contiene il set di istruzioni
+
+
+
+------Quali e come sono le memorie di Massa?
+
+Le memorie di massa sono non volatili, e sono sia di scrittura che di lettura. Conosciamo 'hard disk,SSD,ecc
+
+
+----Quali sono i tipi di accesso alla memoria?
+
+*Sequenziale, deve prima accedere alle locazioni precedenti
+
+*Diretto, accedere direttamente a quella locazione di memoria
+
+*Casuale,accede a qualunque locazione di memoria
+
+
+-----Dall'elettricità all'aritmetica
+
+Abbiamo due tipi di stati ovvero ON e OFF, ad OFF (assenza di tensione) viene attribuito il numero 0 mentre allo stato ON (presenza di tensione) viene attribuito 1
+
+
+
+------Perchè si dice sistema binario?
+
+Perchè vengono utilizzati i valori 0 ed 1 per rappresentare delle quantità
+
+
+
+------A cosa serve l'algebra booleana?
+
+L'algebra booleana serve a rappresentare le informazioni del sistema binario (0,1)
+
+
+
+------Come si rappresenta un informazione in stati elettrici?
+
+Sistema Binario -> Algebra Booleana -> Elettronica
+
+
+
+--------Cos'è la Cache?
+
+è una memoria di piccole dimensioni di tipo SRAM che permette di velocizzare il tempo di accesso ai dati (fare disegno). 
+All'interno della cache troviamo due funzionalità ovvero Cache Hit e Cache Miss, all'interno della cache vengono salvati una coppia di valori (indirizzo,dato),quando viene eseguito un LDR se l'indirizzo non viene trovata si verificherà un caso di Cache Miss mentre quando l'indirizzo viene verificato si avrà una Cache Hit.
+La Cache deve prevedere con più precisione possibile se il dato verrà utilizzato frequentemente nella cache, in modo da evitare eventi di Cache Miss.
+Inoltre la Cache è organizzata a blocchi, ovvero quando si deve trasferire in una specifica locazione di memoria verrà spostato tutto il blocco che solitamente è composto da 64 bit.
+
+
+
+-----Come funziona la RAM?
+
+La RAM è composta da:
+
+*Celle di memoria=ogni cella di memoria contiene 1 bit, l'unione di più celle forma la locazione di memoria identificata da un indirizzo univoco. Ogni cella di memoria ha una linea d'ingresso (scrittura del dato), una linea d'uscita (lettura del dato) e una linea di controllo che permette di selezionare la cella. L'Address Decoder selezionera la locazione di memoria.
+
+*Address Decoder=seleziona una locazione corrispondente all'indirizzo che riceve in ingresso
+
+* Sense/Write Circuit=dei circuiti pilotati da segnali di controllo R/W e CS, a seconda dell'operazione da fare(R/W) e attiva le celle di memoria se si deve effettuare un operazione (CS)
+
+
+Abbiamo la RAM con matrici in cui le celle devono essere selezionate specificato riga e colonna.
+
+Abbiamo varie tipologie di RAM:
+
+*SRAM=chiamata anche Static RAM,realizzata tramite flip-flop, ogni cella è una rete logica composta da diversi componenti,quindi occupa molto spazio e permette di creare chip con una capienza non elevata.
+
+*DRAM=Dynamic RAM, è composta da un condensatore e da un transistor MOFSET, queste sono le due componenti principali che permettono maggiore efficenza e quantità, la problematica della DRAM è data dal condensatore che trattiene carica elettrica (quindi il dato) e successivamente lo emette. Il problema sta nel tempo di emissione del dato che va in contrasto con la CPU in quanto  impega un tempo lunghissimo (60-100ms), ovvero tantissimo tempo per la CPU. 
+
+*SDRAM=è una DRAM sincrona, permette lettura e scrittura multipla(più celle da un byte in una singola operazione), quindi indicando riga e indirizzo sarà capace di scrivere l'intera word.
+
+
+--------Cos'è e come funziona il Decoder?
+
+è un circuito logico combinatorio che decodifica il pattern di bit d'ingresso, restituendo in uscita l'operazione rappresentata da essi. Se d'ingresso avrà n bit, le uscite saranno 2^n
+
+
+--------cos'è e come funziona l'Encoder?
+
+L'encoder ha la funzionali inversa del Decoder, ovvero decodifica 2^n bit e restituisce n bit, solitamente soltato un bit d'ingresso ha valore 1, nel caso in cui ce ne fossero più di uno si andrà a scegliere quello con valore più basso, esempio x0 e x1 con valore 1 si sceglierà x0.
+Dopo aver preso esempio x0 con valore 1 tutte le altre x1,x2,x3 non verranno considerate e si andrà a scrivere una x al posto del valore.
+
+
+
+--------cos'è e come funziona il multiplexer?
+
+Il multiplexer è un circuito combinatorio ha 2^n bit d'ingresso, n bit di selezione e solo uno d'uscita, questo perchè prendendo i bit d'ingresso noi possiamo selezionare quello da mandare come bit d'uscita ( a seconda delle combinazione dei bit di selezione)
+
+
+------Parla della gestione degli interrupt nello stack (da studiare meglio)
+
+La CPU salva l'attuale contenuto del PC nello Stack, poi carica in esso l'indirizzo della routine di gestione interrupt (detta Interrupt Vector). Poi viene eseguito ISR:
+
+-Salva il contenuto attuale nello stack
+-Esegue le varie istruzioni che gestiscono l'interrupt
+-Segnala alla CPU che l'interrupt è stato servito
+-Ricarica i registri nello stack
+-Esegue il Return-from-Interruppt, cioè scrive il valore di LR su PC , in modo da passare all'istruzione successiva
+
+
+----------Cos'è un clock?
+
+Il clock di sistema guida la CPU, nel senso che ad ogni impulso di clock la CPU esegue un istruzione.
+Più è alto il clock, più impulsi di clock al secondo e più istruzioni esegue la CPU. [Il clock è generato da un oscillatore al quarzo]
+
+
+-------Cos'è e a cosa serve il Flip-Flop D-type   *con disegno
+
+La memoria ad un bit è realizzata da un circuito di flip-flop D-type che prevede l'ingresso di clock e un ulteriore ingresso riservato ad un dato che verrà scritto in memoria (Per questo si chiama D-type).
+Però ha un problema detto trasparenza, significa che quando il valore è impostato ad 1 l'uscita può cambiare varie volte.
+
+
+
+-------Parla del flip-flop Master-Slave
+
+è formato da due flip-flop d-type in serie, il primo è il master e il secondo è lo slave, la commutazione del circuito dipende dal master.
+Serve a risolvere il problema del flip-flop d-type.
+
+
+
+------Parla del Flip-Flop T-Type	*con disegno
+
+
+Il T-type è realizzato come il D-type ma collegando l'ingresso D all'uscita negata (negazione)Q. Grazie a questo comportamento sarà possibile realizzare un contatore ad n bit mettendo in serie n cirtuiti T-type.
+
+
+
+-------Parla del datapath	*fare deisegno
+
+Si riferisce alla parte di un processore in cui vengono svolte operazioni aritmetiche e logiche, in sostanza è la parte del processore che esegue calcoli ed è composto da:
+
+-ALU=la parte che esegue le operazioni matematiche e logiche, addizione,sottrazione ecc
+
+-Registri=sono delle piccole unità di memoria con accesso rapido che salvano temporaneamente i dati mentre vengono eseguiti dall'ALU
+
+-Bus di dati=è il canale attraverso il quale vengono trasferiti i dati all'interno del datapath
+
+-Unità di controllo=coordina le operazioni del data path inviando segnali di controllo ai vari componenti per eseguire le operazioni richieste
+
+
+
+
+
+
+-------parla del Branch Hazard e dei vari tipi di Branch.
+
+è l'istruzione di branch incondizionato con la destinazione del salto che viene decisa dal programmatore, questa operazione dura un ciclo di clock.
+Quindi viene eseguito inutilmente il fetch dell'operazione successiva, quindi viene perso un ciclo di clock, la perdita di questo ciclo di clock viene definita Branch Penality.
+Prima di verificare la veriditicità della condizione, bisogna chiedere se si vuole inserire nella pipeline l'istruzione corrente o la successiva.per questo si utilizzano due tipi diversi di Branch:
+
+-Static Branch prediction=Viene deciso in fase di progettazione della CPU l'istruzione da inserire nella pipeline, se l'struzione viene trovata andrà inserita nella pipeline altrimenti si verificherà un Branch Penalty. Bisogna quindi bloccare l'esecuzione e inserire l'istruzione corretta.
+
+
+-Dynamic Branch prediction=si basa su una macchina a stati finiti, ovvero:
+
+--LT (salto probabilmente effettuato)
+
+--LNT (salto probabilmente non effettuato)
+
+Si decide lo stato iniziale. Se si sceglie LT, viene caricata nella pipeline l’istruzione target, se si sceglie LNT viene caricata
+nella pipeline l’istruzione successiva. Questo metodo si basa sul fatto chese la predizione `e esatta, `e pi`u probabile che sia
+ancora esatta. Invece se essa `e sbagliata, viene cambiato lo stato (perch`e a questo punto `e pi`u probabile che sia ancora
+sbagliata), e si verifica branch penalty. Con questa tecnica si riduce il numero di branch penalty, perch`e lo stato viene
+cambiato nel caso in cui si verifichi esso.
+
+
+
+
+
+-------Parla della Pipeline e delle sue problematiche	*Collega al branch
+
+La pipeline è una tecnica di ottimizazzione che impiega meno cicli di clock ed è in grado di eseguire più istruzioni in modo parallelo (throughput), viene misurato in MIPS (Mega istruction Per Secondo).
+
+In alcuni casi può essere non possibile applicare la pipeline, quindi è necessario bloccare (mettere in stallo) la pipeline casi del genere si dicono Hazard e possono essere molteplici:
+
+-Data Dependency Data: si verifica quando l'esecuzione di un'istruzione dipende dalle operazioni eseguite precedentemente, in tal caso è necessario terminare le precedenti per poi eseguire quella attuale.
+
+-Nop Insertion: NOP significa No Operation consiste nell'inserire nella pipeline delle istruzioni che non eseguono alcuna operazione (non ottimizza il tempo d'esecuzione)
+
+-Memory Delay Hazard: riguarda l'accesso alla memoria, quando un istruzione dipende da altre istruzioni di LDR o STR quindi la pipeline si bloccherà finchè non viene completato l'accesso alla memoria.
+
+-(Si collega al branch hazard....)
+
+
+
+
+
+
+------------Parla del Bus Sincrono  *collegare ai bus di sistema
+
+Il segnale di clock gestisce la sequenzialità delle operazioni, quindi esse avvengono durante il fronte del clock.• C’`e una turnazione tra le operazioni eseguite dalla CPU e le operazioni eseguite dalla periferica, o dalla memoria (cioè una esegue delle operazioni solo quando l’altra non ne sta eseguendo), questo fa si che le informazioni siano stabili.
+
+
+
+
+
+---------Parla del Bus Asincrono
+
+La sequenzialità delle operazioni non è gestita da clock ma da segnali speciali detti "handshake" e le operazioni avvengono sui fronti di questi segnali che sono:
+
+- Master-ready: segnala alla periferica che le informazioni sono stabili.
+
+- Slave-Ready: segnala alla CPU che l'operazione è stata completata. 

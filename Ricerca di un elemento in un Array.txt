@@ -1,0 +1,27 @@
+           ;Conteggio del numero di occorrenze in un array
+Array      dcd     1,4,4,6,8
+Num        dcd     5
+
+           mov     r0,#4 ;Numero di elementi nell'array meno 1
+           mov     r1,#Array ;Array
+           mov     r2,#0 ;Indice per occorrenze
+
+loop       
+           cmp     r0,#1
+           beq     end_loop
+
+           ldr     r3,[r1] ;Puntatore ad array
+           cmp     r3,#4 ;Confronto il puntatore con il numero nell'array
+           beq     occorrenze
+
+           sub     r0,r0,#1
+           add     r1,r1,#4 ;scorro l'array
+           b       loop ;ripeto il loop
+
+occorrenze 
+           sub     r0,r0,#1
+           add     r2,r2,#1 ;aggiorno l'indice quando trovo un occorrenza
+
+end_loop   
+           mov     r0,r2
+           end     ;fine

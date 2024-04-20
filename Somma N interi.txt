@@ -1,0 +1,24 @@
+		;Somma	di N interi
+Num		dcd		4
+Data		dcd		1,2,3,4
+		
+		mov		r0,#Num
+		mov		r1,#Data	;r1 = puntatore ad array
+		ldr		r2,[r0] ;r2 = numero di elementi
+		
+		mov		r0,#0
+		
+loop
+		cmp		r2,#0
+		beq		end_loop
+		
+		ldr		r3,[r1]
+		add		r0,r0,r3
+		
+		add		r1,r1,#4
+		sub		r2,r2,#1
+		
+		b		loop
+		
+end_loop
+		end
